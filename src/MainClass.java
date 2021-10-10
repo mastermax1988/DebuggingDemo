@@ -34,5 +34,9 @@ public class MainClass {
   private static void demo4(){
     Words words = Words.getInstance();
     System.out.println(words.getRandomWord());
+    System.out.println(words.getRandomWord());
+    System.out.println(words.getWordWithXCharacters(3));
+    System.out.println(words.getWordWithXCharacters(3));
+    System.out.println(words.getShortestWordLastInAlphabet());
   }
 }
