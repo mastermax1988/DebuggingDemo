@@ -10,10 +10,10 @@ import java.util.Random;
 public class Words {
   private static Words words = new Words();
   private static List<String> wordList;
-  Random rnd;
+  final ThreadLocal<Random> rnd = new ThreadLocal<Random>();
 
   private Words() {
-    rnd = new Random();
+    rnd.set(new Random());
     try {
       File file =
           new File(Objects.requireNonNull(getClass().getResource("Dictionary.txt")).getPath());
@@ -29,7 +29,7 @@ public class Words {
   }
 
   public String getRandomWord(){
-    return wordList.get(rnd.nextInt(wordList.size()));
+    return wordList.get(rnd.get().nextInt(wordList.size()));
   }
 
   public String getWordWithXCharacters(int x){
