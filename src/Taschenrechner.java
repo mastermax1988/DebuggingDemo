@@ -13,14 +13,14 @@ public class Taschenrechner {
       int a = 0;
       int b = 0;
       try {
-        a = Integer.parseInt(in.readLine());
+        String aStr = in.readLine();
+        a = Integer.parseInt(aStr);
         System.out.println("Bitte 2. Summanden eingeben:");
-        b = Integer.parseInt(in.readLine());
+        String bStr = in.readLine();
+        b = Integer.parseInt(bStr);
         // https://www.javatpoint.com/java-string-format
         System.out.printf("%d + %d = %d%n", a, b, a + b);
-      } /*catch (IOException e) {
-        return;
-      }*/ catch (Exception e){
+      } catch (IOException e) {
         e.printStackTrace();
       }
     }
