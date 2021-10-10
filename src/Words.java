@@ -11,10 +11,10 @@ import java.util.Random;
 public class Words {
   private static Words words = new Words();
   private static List<String> wordList;
-  Random rnd;
+  final ThreadLocal<Random> rnd = new ThreadLocal<Random>();
 
   private Words() {
-    rnd = new Random();
+    rnd.set(new Random());
     try {
       File file =
           new File(Objects.requireNonNull(getClass().getResource("dictionary.txt")).getPath());
@@ -30,12 +30,12 @@ public class Words {
   }
 
   public String getRandomWord() {
-    return wordList.get(rnd.nextInt(wordList.size()));
+    return wordList.get(rnd.get().nextInt(wordList.size()));
   }
 
   public String getWordWithCharacters(int x) {
     List<String> wl = wordList.stream().filter(w -> w.length() == x).toList();
-    return wl.get(rnd.nextInt(wl.size()));
+    return wl.get(rnd.get().nextInt(wl.size()));
   }
 
   /**
