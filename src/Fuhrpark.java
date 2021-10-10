@@ -1,9 +1,13 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fuhrpark {
 
   private List<Auto> autos;
 
+  public Fuhrpark(){
+    autos = new ArrayList<>();
+  }
   public void addAuto(Auto a){
     autos.add(a);
   }

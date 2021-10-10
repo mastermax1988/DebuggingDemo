@@ -1,10 +1,17 @@
+/** Auto. */
 public class Auto {
-  private String farbe;
-  private String modell;
+  private final String farbe;
+  private final String modell;
 
-  public Auto(String f, String m){
-    String farbe = f;
-    System.out.println("Auto mit Farbe " + farbe + " erzeugt.");
+  /**
+   * Creates a new Auto.
+   *
+   * @param f farbe
+   * @param m modell
+   */
+  public Auto(String f, String m) {
+    farbe = f;
+    modell = m;
   }
 
   public String getFarbe() {

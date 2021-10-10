@@ -2,10 +2,10 @@
 public class MainClass {
 
   public static void main(String[] args) {
-    //demo1();
-    //demo2();
-    //demo3();
-    //demo4();
+    demo1();
+    demo2();
+    demo3();
+    demo4();
   }
 
 
@@ -13,8 +13,8 @@ public class MainClass {
   private static void demo1(){
    Mathe mathe = new Mathe();
     System.out.println(mathe.zweierPotenz(10));
-    //System.out.println(mathe.zweierPotenz(0));
-    //System.out.println(mathe.zweierPotenz(-2));
+    System.out.println(mathe.zweierPotenz(0));
+    System.out.println(mathe.zweierPotenz(-2));
   }
 
   private static void demo2(){
@@ -23,7 +23,7 @@ public class MainClass {
     fuhrpark.addAuto(auto);
     fuhrpark.addAuto(new Auto("rot", "Truck"));
     fuhrpark.printAutos();
-    fuhrpark.printAuto(2);
+    fuhrpark.printAuto(1);
   }
 
   private static void demo3() {
@@ -34,5 +34,9 @@ public class MainClass {
   private static void demo4(){
     Words words = Words.getInstance();
     System.out.println(words.getRandomWord());
+    System.out.println(words.getRandomWord());
+    System.out.println(words.getWordWithXCharacters(3));
+    System.out.println(words.getWordWithXCharacters(3));
+    System.out.println(words.getShortestWordLastInAlphabet());
   }
 }

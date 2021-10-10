@@ -16,7 +16,7 @@ public class Words {
     rnd = new Random();
     try {
       File file =
-          new File(Objects.requireNonNull(getClass().getResource("Dictionary.txt")).getPath());
+          new File(Objects.requireNonNull(getClass().getResource("dictionary.txt")).getPath());
       wordList = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
     } catch (IOException e) {
       wordList = new ArrayList<>();
@@ -33,10 +33,11 @@ public class Words {
   }
 
   public String getWordWithXCharacters(int x){
-    return null;
+    List<String> wl =  wordList.stream().filter(w -> w.length()==x).toList();
+    return wl.get(rnd.nextInt(wl.size()));
   }
 
   public String getShortestWordLastInAlphabet(){
-    return null;
+    return wordList.stream().sorted((a,b)->b.compareTo(a)).sorted((a,b)->a.length() - b.length()).toList().get(0);
   }
 }

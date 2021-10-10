@@ -21,7 +21,10 @@ public class Taschenrechner {
         // https://www.javatpoint.com/java-string-format
         System.out.printf("%d + %d = %d%n", a, b, a + b);
       } catch (IOException e) {
-        e.printStackTrace();
+        return;
+      } catch (NumberFormatException e){
+        System.out.println("Das war keine Zahl!");
+        return;
       }
     }
   }
