@@ -1,28 +1,42 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/** Fuhrpark. */
 public class Fuhrpark {
 
   private List<Auto> autos;
 
-  public Fuhrpark(){
+  /** Constructor. */
+  public Fuhrpark() {
     autos = new ArrayList<>();
   }
-  public void addAuto(Auto a){
+
+  /**
+   * Adds a Auto.
+   *
+   * @param a Auto
+   */
+  public void addAuto(Auto a) {
     autos.add(a);
   }
 
-  public void printAutos(){
-    for(Auto a : autos){
+  /** Prints all Autos in the Fuhrpark. */
+  public void printAutos() {
+    for (Auto a : autos) {
       printAuto(a);
     }
   }
 
-  public void printAuto(int index){
+  /**
+   * Prints the Auto at a certain index.
+   *
+   * @param index index
+   */
+  public void printAuto(int index) {
     printAuto(autos.get(index));
   }
 
-  private void printAuto(Auto auto){
+  private void printAuto(Auto auto) {
     System.out.println(auto.getModell() + ", " + auto.getFarbe());
   }
 }

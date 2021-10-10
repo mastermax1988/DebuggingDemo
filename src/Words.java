@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+/** Steams debugging. */
 public class Words {
   private static Words words = new Words();
   private static List<String> wordList;
@@ -28,16 +29,25 @@ public class Words {
     return words;
   }
 
-  public String getRandomWord(){
+  public String getRandomWord() {
     return wordList.get(rnd.nextInt(wordList.size()));
   }
 
-  public String getWordWithXCharacters(int x){
-    List<String> wl =  wordList.stream().filter(w -> w.length()==x).toList();
+  public String getWordWithCharacters(int x) {
+    List<String> wl = wordList.stream().filter(w -> w.length() == x).toList();
     return wl.get(rnd.nextInt(wl.size()));
   }
 
-  public String getShortestWordLastInAlphabet(){
-    return wordList.stream().sorted((a,b)->b.compareTo(a)).sorted((a,b)->a.length() - b.length()).toList().get(0);
+  /**
+   * Returns the shortest word, which comes last in alphabet.
+   *
+   * @return shortestWordLastInAlphabet
+   */
+  public String getShortestWordLastInAlphabet() {
+    return wordList.stream()
+        .sorted((a, b) -> b.compareTo(a))
+        .sorted((a, b) -> a.length() - b.length())
+        .toList()
+        .get(0);
   }
 }

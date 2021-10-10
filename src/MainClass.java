@@ -1,6 +1,11 @@
-
+/** Main Class. */
 public class MainClass {
 
+  /**
+   * Main method.
+   *
+   * @param args Commandline args
+   */
   public static void main(String[] args) {
     demo1();
     demo2();
@@ -8,16 +13,14 @@ public class MainClass {
     demo4();
   }
 
-
-
-  private static void demo1(){
-   Mathe mathe = new Mathe();
+  private static void demo1() {
+    Mathe mathe = new Mathe();
     System.out.println(mathe.zweierPotenz(10));
     System.out.println(mathe.zweierPotenz(0));
     System.out.println(mathe.zweierPotenz(-2));
   }
 
-  private static void demo2(){
+  private static void demo2() {
     Fuhrpark fuhrpark = new Fuhrpark();
     Auto auto = new Auto("blau", "Kastenwagen");
     fuhrpark.addAuto(auto);
@@ -31,12 +34,12 @@ public class MainClass {
     taschenrechner.konsolenAddition();
   }
 
-  private static void demo4(){
+  private static void demo4() {
     Words words = Words.getInstance();
     System.out.println(words.getRandomWord());
     System.out.println(words.getRandomWord());
-    System.out.println(words.getWordWithXCharacters(3));
-    System.out.println(words.getWordWithXCharacters(3));
+    System.out.println(words.getWordWithCharacters(3));
+    System.out.println(words.getWordWithCharacters(3));
     System.out.println(words.getShortestWordLastInAlphabet());
   }
 }
